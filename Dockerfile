@@ -4,10 +4,10 @@
 # Base image
 FROM alpine:latest
 
-# set work directory
+# Set work directory
 WORKDIR /usr/src/app
 
-# set environment variables
+# Set Python environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
@@ -24,14 +24,11 @@ RUN source ./osrs-bluesky-bot/bin/activate \
     && pip install --upgrade pip \
     && pip install -r requirements.txt
 
-# Copy configuration file
-COPY .env .
-
-#test
-#RUN ls -lah .
-#RUN ls -lah ./osrs-bluesky-bot
+# Set environment variables
+#(SET BLUESKY_PASSWORD IN FLY)
+ENV BLUESKY_USERNAME=osrsbot-unofficial.bsky.social
+ENV OSRS_RSS_URL=https://secure.runescape.com/m=news/latest_news.rss?oldschool=true
 
 # Run
 COPY main.py .
-#CMD [ "python", "main.py" ]
 CMD source ./osrs-bluesky-bot/bin/activate && exec python main.py

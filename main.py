@@ -19,8 +19,7 @@
 # imports
 from atproto import (
     Client,
-    models,
-    AtUri
+    models
 )
 import os
 import dotenv
@@ -32,7 +31,7 @@ def main() -> bool:
     # Status message
     print("🤖 Starting bot..")
 
-    # Fetch config
+    # Fetch config from environment variables
     configData = fetchConfig()
 
     # Create client
@@ -106,23 +105,19 @@ def main() -> bool:
     return True
 
 
-# Fetch login info from config file
+# Fetch login info from environment variables
 def fetchConfig() -> dict[str, str]:
-    # Load .env file
-    dotenvFile = dotenv.find_dotenv()
-    dotenv.load_dotenv(dotenvFile)
-
     # Status message
-    print(f"🤖 Bot loading env file \'{dotenvFile}\'..")
+    print(f"🤖 Bot loading environment variables..")
 
     if "BLUESKY_USERNAME" not in os.environ:
-        print(f"🤖 Bot cannot find key \'BLUESKY_USERNAME\' in env file \'{dotenvFile}\'..")
+        print(f"🤖 Bot cannot find key \'BLUESKY_USERNAME\' in environment variables..")
         return {}
     if "BLUESKY_PASSWORD" not in os.environ:
-        print(f"🤖 Bot cannot find key \'BLUESKY_PASSWORD\' in env file \'{dotenvFile}\'..")
+        print(f"🤖 Bot cannot find key \'BLUESKY_PASSWORD\' in environment variables..")
         return {}
     if "OSRS_RSS_URL" not in os.environ:
-        print(f"🤖 Bot cannot find key \'OSRS_RSS_URL\' in env file \'{dotenvFile}\'..")
+        print(f"🤖 Bot cannot find key \'OSRS_RSS_URL\' in environment variables..")
         return {}
 
     # Return in dictionary
