@@ -34,6 +34,17 @@ def main() -> bool:
     # Fetch config from environment variables
     configData = fetchConfig()
 
+    # Validate environment variables fetched
+    if(configData):
+        # Status message
+        print("🤖 Bot fetched environment variables..")
+    else:
+        # Status message
+        print("🤖 Bot was unable to fetch environment variables..")
+
+        # Return failure
+        return False
+
     # Create client
     client = Client("https://bsky.social")
 
