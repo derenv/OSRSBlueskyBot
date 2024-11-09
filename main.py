@@ -1,5 +1,5 @@
-# (SPDX info)
-#
+# SPDX-FileCopyrightText: 2024 Deren Vural derenvural@outlook.com
+# SPDX-License-Identifier: MIT
 
 ##
 #  Title: OSRSBlueskyBot

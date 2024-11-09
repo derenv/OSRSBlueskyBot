@@ -1,6 +1,4 @@
-# flyctl launch added from .gitignore
-#
-#
+# SPDX-FileCopyrightText: 2024 Deren Vural derenvural@outlook.com
+# SPDX-License-Identifier: MIT
 
-**/.env
 fly.toml

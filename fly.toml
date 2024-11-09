@@ -1,7 +1,5 @@
-# fly.toml app configuration file generated for osrsblueskybot on 2024-11-09T19:18:10Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
+# SPDX-FileCopyrightText: 2024 Deren Vural derenvural@outlook.com
+# SPDX-License-Identifier: MIT
 
 app = 'osrsblueskybot'
 primary_region = 'lhr'

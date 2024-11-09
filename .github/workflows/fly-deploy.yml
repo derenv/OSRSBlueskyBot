@@ -1,4 +1,5 @@
-# See https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
+# SPDX-FileCopyrightText: 2024 Deren Vural derenvural@outlook.com
+# SPDX-License-Identifier: MIT
 
 name: Fly Deploy
 on:
