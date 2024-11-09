@@ -1,0 +1,7 @@
+# (SPDX info)
+#
+
+atproto
+python-dotenv
+feedparser
+requests
