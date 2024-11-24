@@ -32,6 +32,11 @@ RUN source /usr/src/app/osrs-bluesky-bot/bin/activate \
 ENV BLUESKY_USERNAME=osrsbot-unofficial.bsky.social
 ENV OSRS_RSS_URL=https://secure.runescape.com/m=news/latest_news.rss?oldschool=true
 
-# Run
+# Copy over main script
 COPY main.py /usr/src/app/main.py
-CMD ["source", "/usr/src/app/osrs-bluesky-bot/bin/activate", "&&", "exec", "python", "main.py"]
+
+# Copy over entrypoint script
+COPY run.sh /usr/src/app/run.sh
+
+# Run
+CMD ["sh","/usr/src/app/run.sh"]
