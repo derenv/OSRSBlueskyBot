@@ -34,4 +34,4 @@ ENV OSRS_RSS_URL=https://secure.runescape.com/m=news/latest_news.rss?oldschool=t
 
 # Run
 COPY main.py .
-CMD source ./osrs-bluesky-bot/bin/activate && exec python main.py
+CMD ["source", "./osrs-bluesky-bot/bin/activate", "&&", "exec", "python", "main.py"]
