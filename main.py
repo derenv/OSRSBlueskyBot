@@ -77,6 +77,9 @@ def main() -> bool:
         # Status message
         print("🤖 Bot cannot get previous post..")
     else:
+        # Output title of last post to log
+        print("🤖 Last Bluesky post: " + lastPost)
+
         # Status message
         print("🤖 Bot fetched previous post..")
 
@@ -183,8 +186,12 @@ def fetchRSS(
         RSSUrl
     )
 
-    # Check if is new item
     try:
+        # Output title of last RSS post to log
+        print("🤖   Title: " + feed.entries[0].title)
+        print("🤖 Content: " + feed.entries[0].summary)
+
+        # Check if is new item
         if feed.entries[0].summary != lastPost:
             # Return feed item content as dictionary
             return {
