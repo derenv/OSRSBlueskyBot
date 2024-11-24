@@ -22,10 +22,10 @@ RUN apk update \
 RUN python -m venv /usr/src/app/osrs-bluesky-bot
 
 # Install dependancies
-COPY /usr/src/app/requirements.txt .
+COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN source /usr/src/app/osrs-bluesky-bot/bin/activate \
     && pip install --upgrade pip \
-    && pip install -r requirements.txt
+    && pip install -r /usr/src/app/requirements.txt
 
 # Set environment variables
 #(SET BLUESKY_PASSWORD IN FLY)
@@ -33,5 +33,5 @@ ENV BLUESKY_USERNAME=osrsbot-unofficial.bsky.social
 ENV OSRS_RSS_URL=https://secure.runescape.com/m=news/latest_news.rss?oldschool=true
 
 # Run
-COPY main.py .
+COPY main.py /usr/src/app/main.py
 CMD ["source", "/usr/src/app/osrs-bluesky-bot/bin/activate", "&&", "exec", "python", "main.py"]
