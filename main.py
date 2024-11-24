@@ -16,6 +16,7 @@
 #   https://docs.python.org/3/library/typing.html
 ##
 
+
 # imports
 from atproto import (
     Client,
@@ -25,6 +26,7 @@ import os
 import dotenv
 import feedparser
 import requests
+
 
 # main function
 def main() -> bool:
