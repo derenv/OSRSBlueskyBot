@@ -4,6 +4,9 @@
 # Base image
 FROM alpine:latest
 
+# Author settings
+LABEL org.opencontainers.image.authors="Deren Vural derenvural@outlook.com"
+
 # Set work directory
 WORKDIR /usr/src/app
 
